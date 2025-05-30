@@ -30,17 +30,44 @@ The APP is developed to allow the user the following:
 Beneath you can find the user stories as well as objectives in Gherkin syntax used for testing the app:
 
 <ol>
+<li>Feature 1: Filter Events by City. 
+As a user,
+I should be able to filter events by city
+So that I can see a list of events taking place in that city.
+
+<b>Gherkin syntax:</b>
+Scenario: Display a list of cities to filter events
+Given I am on the events page
+When I view the city filter options
+Then I should see a list of available cities
+
+Scenario: Filter events by selecting a city
+Given I am on the events page
+And a list of cities is displayed
+When I select a city from the list
+Then I should see only the events taking place in the selected city
+
+Scenario: Reset the city filter to view all events
+Given I have filtered events by a city
+When I clear or reset the city filter
+Then I should see events from all cities again
+
+</li>
 <li><b>Feature 2: Show/Hide Event Details </b>
 As a user, I should be able to extend the event preview window to see more details about the event.
-As a user, when finished reading all the extended event details, I should be able to minimize the event details’ section to have a better overview of the app/page. 
+
+As a user, when finished reading all the extended event details, I should be able to minimize the event details’ section to have a better overview of the app/page.
 <b>Gherkin syntax:</b>
-Given a user is browsing through events,                                                             When they find an event’s title interesting,                                                               Then they should be able to extend and after reading also minimize the event’s details.
+Given a user is browsing through events, When they find an event’s title interesting, Then they should be able to extend and after reading also minimize the event’s details.
+
 </li>
 <li>
 <b>Feature 3: Specify Number of Events </b>
 As a user, I would like to be able to specify/choose the number of the events I’m interested in, so that I can view more or less events at a time. 
 <b>Gherkin syntax:</b>
-Given a user is searching for events from one city,                                               When they do not want to read through all the available events,                                Then they should be able to specify the number of events they want to see.
+Given a user is searching for events from one city,                                               
+When they do not want to read through all the available events,                                
+Then they should be able to specify the number of events they want to see.
 </li>
 <li>
 <b>Feature 4: Use the App When Offline</b>
