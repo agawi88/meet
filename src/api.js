@@ -81,7 +81,7 @@ const checkToken = async (accessToken) => {
 
 const getToken = async (code) => {
     const encodeCode = encodeURIComponent(code);
-    const response = waiat fetch(
+    const response = await fetch(
         'https://gz4xdwrqah.execute-api.eu-central-1.amazonaws.com/dev/api/token' + '/' + encodeCode);
     const { access_token } = await response.json();
     access_token && localStorage.setItem("access_token", access_token);
