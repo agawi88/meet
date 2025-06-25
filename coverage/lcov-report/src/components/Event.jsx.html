@@ -30,23 +30,23 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.73% </span>
+                <span class="strong">43.47% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/23</span>
+                <span class='fraction'>10/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -104,9 +104,9 @@
 <a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">48x</span>
-<span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">193x</span>
+<span class="cline-any cline-yes">193x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -117,13 +117,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">45x</span>
-<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">193x</span>
+<span class="cline-any cline-yes">193x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,7 +144,7 @@ import React, {useState} from "react";
 &nbsp;
 const Event = ({ event }) =&gt; {
     const [showDetails, setShowDetails] = useState(false);
- if (!event) return null;
+ <span class="missing-if-branch" title="if path not taken" >I</span>if (!event) <span class="cstat-no" title="statement not covered" >return null;</span>
 &nbsp;
  const {
     summary = <span class="branch-0 cbranch-no" title="branch not covered" >"No title",</span>
@@ -161,15 +161,15 @@ const Event = ({ event }) =&gt; {
             &lt;h2&gt;{summary}&lt;/h2&gt;
             &lt;p&gt;{location}&lt;/p&gt;
             &lt;p&gt;{created ? new Date(created).toString() : <span class="branch-1 cbranch-no" title="branch not covered" >"No date"}</span>&lt;/p&gt;
-            &lt;button onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setShowDetails(!showDetails)}</span>&gt;
-                {showDetails ? <span class="branch-0 cbranch-no" title="branch not covered" >"Hide details" </span>: "Show details"}
+            &lt;button onClick={() =&gt; setShowDetails(!showDetails)}&gt;
+                {showDetails ? "Hide details" : "Show details"}
             &lt;/button&gt;
             {showDetails &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >                &lt;div data-testid="event-details"&gt;</span>
-                    &lt;p&gt;&lt;strong&gt;Start:&lt;/strong&gt;{start?.dateTime ? new Date(start.dateTime).toString() : 'N/A'}&lt;/p&gt;
-                    &lt;p&gt;&lt;strong&gt;End:&lt;/strong&gt;{end?.dateTime ? new Date(end.dateTime).toString() : 'N/A'}&lt;/p&gt;
-                    &lt;p&gt;&lt;strong&gt;Description: &lt;/strong&gt;{description || 'N/A'}&lt;/p&gt;
-                    &lt;p&gt;&lt;strong&gt;Organizer: &lt;/strong&gt;{organizer?.email || 'N/A'}&lt;/p&gt;
+                &lt;div data-testid="event-details"&gt;
+                    &lt;p&gt;&lt;strong&gt;Start:&lt;/strong&gt;{start?.dateTime ? new Date(start.dateTime).toString() : <span class="branch-1 cbranch-no" title="branch not covered" >'N/A'}</span>&lt;/p&gt;
+                    &lt;p&gt;&lt;strong&gt;End:&lt;/strong&gt;{end?.dateTime ? new Date(end.dateTime).toString() : <span class="branch-1 cbranch-no" title="branch not covered" >'N/A'}</span>&lt;/p&gt;
+                    &lt;p&gt;&lt;strong&gt;Description: &lt;/strong&gt;{description || <span class="branch-1 cbranch-no" title="branch not covered" >'N/A'}</span>&lt;/p&gt;
+                    &lt;p&gt;&lt;strong&gt;Organizer: &lt;/strong&gt;{organizer?.email || <span class="branch-1 cbranch-no" title="branch not covered" >'N/A'}</span>&lt;/p&gt;
                     &lt;p&gt;&lt;a href={htmlLink} target="_blank" rel=""&gt;Event Website &lt;/a&gt;&lt;/p&gt;
                 &lt;/div&gt;
             )}
@@ -184,7 +184,7 @@ export default Event;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-06-24T10:46:27.574Z
+                at 2025-06-25T12:43:20.365Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
