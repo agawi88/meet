@@ -2,9 +2,16 @@
 import React, { useState } from 'react';
 
 
-const NumberOfEvents = ({ allEvents }) => {
-    const [number, setNumber] = useState(32);
+const NumberOfEvents = ({ setCurrentNOE }) => {
+    const [number, setNumber] = useState(32); // default no of events;
 
+    const handleInputChanged = (event) => {
+        const value = Number(event.target.value);
+        setNumber(value);
+        if (setCurrentNOE) {
+            setCurrentNOE(value); // updates only when provided
+        }
+    };
     return (
         <div id="events-number">
             <input
@@ -12,7 +19,7 @@ const NumberOfEvents = ({ allEvents }) => {
                 className="number"
                 placeholder="Choose number of events"
                 value={number}
-                onChange={(e) => setNumber(Number(e.target.value))}
+                onChange={handleInputChanged}
             />      
         </div>
     )
