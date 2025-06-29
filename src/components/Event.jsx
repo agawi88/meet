@@ -1,5 +1,6 @@
 // src/components/Event.jsx
-import React, {useState} from "react";
+import React, { useState } from "react";
+import '../App.css';
 
 const Event = ({ event }) => {
     const [showDetails, setShowDetails] = useState(false);
@@ -20,7 +21,7 @@ const Event = ({ event }) => {
             <h2>{summary}</h2>
             <p>{location}</p>
             <p>{created ? new Date(created).toString() : "No date"}</p>
-            <button onClick={() => setShowDetails(!showDetails)}>
+            <button className="details-btn" onClick={() => setShowDetails(!showDetails)}>
                 {showDetails ? "Hide details" : "Show details"}
             </button>
             {showDetails && (
