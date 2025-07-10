@@ -4,10 +4,6 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { getEvents } from '../api';
 
-/* let allEvents;
-beforeAll(async () => {
-    allEvents = await getEvents();
-}); */
 
 let firstEvent;
 

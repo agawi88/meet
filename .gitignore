@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 notes
+jest.e2e.config.cjs
 *.local
 
 # Editor directories and files
