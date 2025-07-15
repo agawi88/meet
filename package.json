@@ -12,6 +12,7 @@
     "test:cover": "react-scripts test --coverage src"
   },
   "dependencies": {
+    "atatus-spa": "^4.6.4",
     "nprogress": "^0.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
