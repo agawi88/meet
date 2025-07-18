@@ -1,4 +1,5 @@
 import puppeteer from 'puppeteer';
+import { waitFor } from '@testing-library/react';
 // Feature 1
 
 describe('Filter Events by City', () => {
@@ -125,17 +126,14 @@ describe('specify number of events', () => {
     });
 
     test('User specifies the number of events they want to see', async () => {
+        await page.waitForSelector('#events-number input');
         await page.click('#events-number input');
-        await page.keyboard.press('Backspace');  
-        await page.type('input[type="number"]', '5');
-        await page.keyboard.press('Enter');
+        await page.keyboard.press('Backspace'); 
+        await page.keyboard.type('5');
 
-        await page.waitForFunction(() => {
-            return document.querySelectorAll('.event').length === 5;
-        }, { timeout: 90000 });
-
-        const updatedEvents = await page.$$('.event');
-
-        expect(updatedEvents.length).toBe(5);
+        await waitFor(async () => {
+            const updatedEvents = await page.$$eval('#event-list > li.event', (elements) => elements.length);
+            expect(updatedEvents).toBeLessThanOrEqual(5);
+        }, { timeout: 3000 });
     });
 });

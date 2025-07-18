@@ -10,7 +10,9 @@ describe('<NumberOfEvents /> component', () => {
 
     let NumberOfEventsComponent;
     beforeEach(() => {
-        NumberOfEventsComponent = render(<NumberOfEvents />);
+        NumberOfEventsComponent = render(<NumberOfEvents
+        setErrorAlert={() => { }}
+        />);
     });
 
     // ensures that the NumberOfEvents component contains an element with the role of the textbox.

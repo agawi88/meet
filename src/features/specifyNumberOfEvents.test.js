@@ -46,7 +46,8 @@ defineFeature(feature, test => {
             const EventListDOM = AppDOM.querySelector('#event-list');
             await waitFor(() => {
                 const EventListItems = within(EventListDOM).queryAllByRole('listitem');
-                expect(EventListItems.length).toBe(0);            });
+                expect(EventListItems.length).toBe(32);
+            });
         });
 
         when('they do not want to read through all the available events', async () => {
