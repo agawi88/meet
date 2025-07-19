@@ -7,15 +7,16 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
     const [number, setNumber] = useState(32); // default no of events;
 
     const handleInputChanged = (event) => {
-        const value = Number(event.target.value);
-        setNumber(value);
+        const rawValue = event.target.value; 
+        const numberValue = Number(rawValue);
+        setNumber(numberValue);
         if (setCurrentNOE) {
-            setCurrentNOE(value); // updates only when provided
+            setCurrentNOE(numberValue); // updates only when provided
         }
 
         let errorText;
-        if (isNaN(value) || value <= 0) {
-            errorText = "This is not a valid input. Please use only numeric input greater or qual to 0."
+        if ( rawValue.trim() === "" || isNaN(numberValue) || numberValue <= 0) {
+            errorText = "This is not a valid input. Please use only numeric input greter than or equal to 1."
         } else {
             errorText = ""
         }
