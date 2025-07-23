@@ -53,11 +53,11 @@ function App() {
         setInfoAlert={setInfoAlert}
         setWarningAlert={setWarningAlert}
        />
-      <EventList events={events} />
       <NumberOfEvents
         setCurrentNOE={setCurrentNOE}
         setErrorAlert={setErrorAlert}
       />
+      <EventList events={events} />
     </div>
   );
 }
