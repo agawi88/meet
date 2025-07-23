@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import EventList from "./components/EventList";
 import CitySearch from "./components/CitySearch";
 import NumberOfEvents from "./components/NumberOfEvents";
-import { InfoAlert, ErrorAlert} from "./components/Alert";
+import { InfoAlert, ErrorAlert, WarningAlert} from "./components/Alert";
 import { extractLocations, getEvents } from "./api";
 
 
@@ -16,6 +16,7 @@ function App() {
   const [currentCity, setCurrentCity] = useState("See all cities");
   const [infoAlert, setInfoAlert] = useState("");
   const [errorAlert, setErrorAlert] = useState("");
+  const [warningAlert, setWarningAlert] = useState("");
   
 
   useEffect(() => {
@@ -29,7 +30,11 @@ function App() {
       setAllLocations(extractLocations(allEvents));
     };
 
-
+    if (navigator.onLine) {
+      setWarningAlert("");// set the warning alert message to an empty string ""
+    } else {
+      setWarningAlert("You are currently offline. Displayed events may not be up to date.") // set the warning alert message to a non-empty string
+    }
     fetchData();
   }, [currentCity, currentNOE]);
 
@@ -39,11 +44,14 @@ function App() {
       <div className="alerts-container">
         {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
+        {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
+
       </div>
       <CitySearch
         allLocations={allLocations}
         setCurrentCity={setCurrentCity}
         setInfoAlert={setInfoAlert}
+        setWarningAlert={setWarningAlert}
        />
       <EventList events={events} />
       <NumberOfEvents
