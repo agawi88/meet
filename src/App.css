@@ -1,9 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
-.App {
-  width: 100%;
-  max-width: 1200px;
+#root {
+  width: 99%;
   margin: 0 auto;
+  padding: 1rem;
+}
+
+.App {
+  width: 99%;
+  max-width: 1200px;
+   margin: 0 auto;
   padding: 1rem;
 }
 
@@ -76,10 +82,17 @@ input[type="number"] {
   background-color: #bcdcdb;
 }
 #event-list {
-  display: flex; 
+/*   display: flex; 
   flex-direction: column;
-  width: 100%;
-  gap: 10px;
+  justify-content: center;
+  width: 600%;
+  gap: 10px; */
+
+    display: grid;
+      grid-template-columns: 1fr;
+      column-width: 400px;
+      gap: 1rem;
+      margin: 0 150px;
 }
 
 .event {
