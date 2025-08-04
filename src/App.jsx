@@ -4,12 +4,12 @@ import CitySearch from "./components/CitySearch";
 import NumberOfEvents from "./components/NumberOfEvents";
 import { InfoAlert, ErrorAlert, WarningAlert} from "./components/Alert";
 import { extractLocations, getEvents } from "./api";
-
+import CityEventsChart from "./components/CityEventsChart";
+import EventGenresChart from "./components/EventGenresChart";
 
 import './App.css';
 
 function App() {
-  const [allEvents, setAllEvents] = useState([]);
   const [events, setEvents] = useState([]);
   const [currentNOE, setCurrentNOE] = useState(32);
   const [allLocations, setAllLocations] = useState([]);
@@ -57,6 +57,10 @@ function App() {
         setCurrentNOE={setCurrentNOE}
         setErrorAlert={setErrorAlert}
       />
+      <div className="charts-container">
+        <EventGenresChart events={events} />
+        <CityEventsChart allLocations={allLocations} events={events} />
+      </div>
       <EventList events={events} />
     </div>
   );

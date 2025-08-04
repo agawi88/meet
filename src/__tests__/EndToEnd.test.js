@@ -13,7 +13,7 @@ describe('Filter Events by City', () => {
             timeout: 0 // removes any puppeteer/browser timeout limitations (this isn't the same as the timeout of jest)
         });
         page = await browser.newPage();
-        await page.goto('http://localhost:5173/');
+        await page.goto('http://localhost:5173');
         await page.waitForSelector('.event');
     });
 
@@ -70,7 +70,7 @@ describe('show/hide event details', () => {
             timeout: 0 // removes any puppeteer/browser timeout limitations (this isn't the same as the timeout of jest)
         });
         page = await browser.newPage();
-        await page.goto('http://localhost:5173/');
+        await page.goto('http://localhost:5173');
         await page.waitForSelector('.event');
     });
 
@@ -112,7 +112,7 @@ describe('specify number of events', () => {
             timeout: 0 // removes any puppeteer/browser timeout limitations (this isn't the same as the timeout of jest)
         });
         page = await browser.newPage();
-        await page.goto('http://localhost:5173/');
+        await page.goto('http://localhost:5173');
         await page.waitForSelector('.event');
     });
 

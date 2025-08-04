@@ -1,12 +1,19 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
 .App {
-  text-align: center;
-  padding: 2% 5%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-.App * {
-  box-sizing: border-box;
+.body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f0f0f0;
 }
 
 ul {
@@ -68,8 +75,16 @@ input[type="number"] {
 .suggestions>li:hover {
   background-color: #bcdcdb;
 }
+#event-list {
+  display: flex; 
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
 
 .event {
+  width: 100%;
+  box-sizing:border-box;
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
@@ -98,4 +113,16 @@ input[type="number"] {
   left: 20px;
   width: 250px;
   z-index: 1000;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
 }

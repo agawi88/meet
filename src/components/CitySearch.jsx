@@ -61,11 +61,10 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
     )
 };
 
-
-export default CitySearch;
-
 CitySearch.propTypes = {
   allLocations: PropTypes.array.isRequired,
   setCurrentCity: PropTypes.func.isRequired,
   setInfoAlert: PropTypes.func.isRequired,
 };
+
+export default CitySearch;
