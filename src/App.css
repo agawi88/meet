@@ -31,6 +31,33 @@ p {
   margin: 5px 0;
 }
 
+.topNav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.firstRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  align-self: flex-start;
+  margin-left: 10px;
+}
+
+.firstRow h2 {
+  display: inline-block;
+  font-size: 20px;
+}
+
+.secondRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
 input[type="text"],
 input[type="number"] {
   padding: 8px 6px 8px 10px;
@@ -51,8 +78,9 @@ input[type="number"] {
 #city-search {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 20px auto;
   position: relative;
+  align-self: center;
 }
 
 .suggestions {
@@ -81,18 +109,25 @@ input[type="number"] {
 .suggestions>li:hover {
   background-color: #bcdcdb;
 }
-#event-list {
-/*   display: flex; 
-  flex-direction: column;
-  justify-content: center;
-  width: 600%;
-  gap: 10px; */
 
-    display: grid;
-      grid-template-columns: 1fr;
-      column-width: 400px;
-      gap: 1rem;
-      margin: 0 150px;
+#events-number {
+  display: flex;
+  margin: 20px auto;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+}
+
+.number {
+  cursor: pointer;
+}
+
+#event-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-width: 400px;
+  gap: 1rem;
+  margin: 20px 150px;
 }
 
 .event {
@@ -116,10 +151,6 @@ input[type="number"] {
   cursor: pointer;
 }
 
-.number {
-  cursor: pointer;
-}
-
 .alerts-container {
   position: fixed;
   top: 0px;
@@ -129,13 +160,47 @@ input[type="number"] {
 }
 
 .charts-container {
+  width: 99%;
+  margin: 30px auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 1.2fr;
   gap: 1rem;
+}
+.recharts-responsive-container:first-child {
+  width: 99%;
+  max-width: 500px;
 }
 
 @media (max-width: 768px) {
   .charts-container {
     grid-template-columns: 1fr;
   }
+
+    .firstRow {
+      display: flex;
+      flex-direction: column;
+      align-self: self-start;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .firstRow h2 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      align-content: center;
+    }
+  
+    #city-search {
+      width: 100%;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+  
+    .secondRow {
+      justify-content: center;
+      align-content: center;
+    }
+
 }

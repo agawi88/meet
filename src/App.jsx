@@ -47,16 +47,23 @@ function App() {
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
 
       </div>
-      <CitySearch
+      <nav className="topNav">
+        <div className="firstRow">
+        <h2> Welcome to MEET App! Find your event here: </h2>
+        <CitySearch
         allLocations={allLocations}
         setCurrentCity={setCurrentCity}
         setInfoAlert={setInfoAlert}
         setWarningAlert={setWarningAlert}
-       />
+          />
+        </div>
+        <div className="secondRow">
       <NumberOfEvents
         setCurrentNOE={setCurrentNOE}
         setErrorAlert={setErrorAlert}
-      />
+          />
+          </div>
+      </nav>
       <div className="charts-container">
         <EventGenresChart events={events} />
         <CityEventsChart allLocations={allLocations} events={events} />

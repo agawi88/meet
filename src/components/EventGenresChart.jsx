@@ -49,10 +49,10 @@ const EventGenresChart = ( {events} ) => {
   };
     
   return (
-      <div style={{ width: '99%', height: 400 }}>
+    <div style={{ width: 480, height: 400 }}>
         <ResponsiveContainer>
         <PieChart
-            margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+            margin={{ top: 20, right: -20, bottom: 20, left: -10 }}
         >
           <Pie
             dataKey="value"
@@ -61,7 +61,7 @@ const EventGenresChart = ( {events} ) => {
             fill="#8884d8"
             labelLine={false}
             label={renderCustomizedLabel}
-            outerRadius={120}/>
+            outerRadius={150}/>
           </PieChart>
         </ResponsiveContainer>
       </div>
