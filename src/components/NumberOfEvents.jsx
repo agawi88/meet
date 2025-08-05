@@ -25,6 +25,7 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
 
     return (
         <div id="events-number">
+            <p>Number of events</p>
             <input
                 type="number"
                 className="number"

@@ -203,4 +203,9 @@ input[type="number"] {
       align-content: center;
     }
 
+    .secondRow p {
+      justify-content: center;
+      align-self: center;
+    }
+
 }
