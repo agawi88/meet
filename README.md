@@ -27,6 +27,21 @@ The APP is developed to allow the user the following:
 ● AddanAppShortcuttotheHomeScreen.
 ● DisplayCharts Visualizing Event Details.
 
+<h3>TECHNOLOGIES USED:</h3>
+<ol>
+<li>REACT + Vite + Vercel</li>
+<li>OAuth</li>
+<li>AWS Lambda Functions</li>
+<li>Recharts</li>
+<li>Puppeteer</li>
+<li>Jest</li>
+<li>Jest-Cucumber</li>
+<li>Atatus</li>
+<li>Babel</li>
+<li>Web App Manifest</li>
+<li>Workbox</li>
+</ol>
+
 Beneath you can find the user stories as well as objectives in Gherkin syntax used for testing the app:
 
 <ol>
